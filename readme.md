@@ -2,6 +2,10 @@
 
 Designed to splifiy to creation of microservices by abstacting away common functionality such as error responses and validating user information.
 
+Intsall by running
+
+```npm install git+https://github.com/ultraman257/node-utils.git --save```
+
 ## Current Utils
 
 ##### validateEmail
