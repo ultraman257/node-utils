@@ -12,14 +12,23 @@ module.exports = function(keyFile) {
         key = fs.readFileSync(keyFile);
     }
 
-    if((key.contains("-----BEGIN PUBLIC KEY-----") && key.contains("-----END PUBLIC KEY-----")) || (key.contains("-----BEGIN PRIVATE KEY-----") && key.contains("-----END PRIVATE KEY-----"))) {
+    key = keyFile.toString()
+
+
+    // format public key
+    if((key.indexOf("-----BEGIN PUBLIC KEY-----") > -1 && key.indexOf("-----END PUBLIC KEY-----")) > -1) {
         // Keyfile must be text
         // Check meets required format
-        return key.subarray(26, key.length-24);
-
         // Return the key as string
+        return key.substr(26, key.length-50);
+
     }
 
+
+    // format private key
+    if (key.indexOf("-----BEGIN PRIVATE KEY-----") > -1 && key.indexOf("-----END PRIVATE KEY-----") > -1) {
+        return key.substr(27, key.length-53);
+    }
 
 
     // Throw error if neither conditions met.
