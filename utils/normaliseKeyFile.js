@@ -14,7 +14,7 @@ module.exports = function(keyFile) {
     if((key.contains("-----BEGIN PUBLIC KEY-----") && key.contains("-----END PUBLIC KEY-----")) || (key.contains("-----BEGIN PRIVATE KEY-----") && key.contains("-----END PRIVATE KEY-----"))) {
         // Keyfile must be text
         // Check meets required format
-        return key;
+        return key.subarray(26, key.length-24);
 
         // Return the key as string
     }
