@@ -8,6 +8,7 @@ module.exports = function(keyFile) {
 
     // Check if keyFile is a file path
     if(keyFile === path.basename(keyFile)) {
+        console.log("Key is file")
         key = fs.readFileSync(keyFile);
     }
 

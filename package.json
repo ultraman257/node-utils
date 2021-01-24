@@ -11,5 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "chalk": "^4.1.0"
+  },
+  "optionalDependencies": {
+    "rethinkdbdash": "^2.3.31"
   }
 }
