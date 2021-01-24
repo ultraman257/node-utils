@@ -7,27 +7,21 @@ module.exports = function(keyFile) {
     let key = keyFile;
 
     // Check if keyFile is a file path
-    if(keyFile === path.basename(keyFile)) {
+    if(key.split(".").length > 1 && key.split("/").length > 1) {
         console.log("Key is file")
-        key = fs.readFileSync(keyFile);
+        key = Buffer(fs.readFileSync(keyFile)).toString().trim();
     }
 
-    key = keyFile.toString()
-
-
     // format public key
-    if((key.indexOf("-----BEGIN PUBLIC KEY-----") > -1 && key.indexOf("-----END PUBLIC KEY-----")) > -1) {
-        // Keyfile must be text
-        // Check meets required format
-        // Return the key as string
-        return key.substr(26, key.length-50);
+    if(key.split("PUBLIC").length > 1) {
+        return key
 
     }
 
 
     // format private key
-    if (key.indexOf("-----BEGIN PRIVATE KEY-----") > -1 && key.indexOf("-----END PRIVATE KEY-----") > -1) {
-        return key.substr(27, key.length-53);
+    if (key.split("PRIVATE").length > 1) {
+        return key
     }
 
 
