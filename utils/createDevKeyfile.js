@@ -1,7 +1,7 @@
 const chalk = require("chalk");
 const { generateKeyPair } = require('crypto');
 
-const { normaliseKeyFile } = require('./normaliseKeyFile');
+const normaliseKeyFile = require('./normaliseKeyFile');
 
 module.exports = function() {
     generateKeyPair('rsa', {
