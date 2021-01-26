@@ -10,7 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "chalk": "^4.1.0"
+    "chalk": "^4.1.0",
+    "jsonwebtoken": "^8.5.1"
   },
   "optionalDependencies": {
     "rethinkdbdash": "^2.3.31"
