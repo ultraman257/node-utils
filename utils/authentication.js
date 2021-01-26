@@ -1,6 +1,7 @@
-import {malformed} from "./errorResponses";
+
 
 const jwt = require("jsonwebtoken");
+const {malformed} = require("./errorResponses");
 
 module.exports = function(req, res, next) {
 
