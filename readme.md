@@ -22,3 +22,14 @@ Converts the argument into a valid string containing the keyfile and checks to e
 normaliseKeyFile(String or path)
 ```
 
+
+#### hasPermission
+Checks the user has permission
+To use prior to version 1.1 add the following near the top of the route method
+```javascript
+hasPermission(req, res, "[permission]")
+```
+To use in version 1.1 or above use the following method
+```javascript
+router.post('*', hasPermission("[permission]")), (req, res)...
+```
