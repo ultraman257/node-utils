@@ -8,3 +8,17 @@ const authentication = require('./utils/authentication'),
   validateEmail = require('./utils/validateEmail'),
   validateLocation = require('./utils/validateLocation'),
   validateString = require('./utils/validateString')
+
+  module.exports = {
+    authentication,
+    createDevKeyfile,
+    database,
+    malformed,
+    internalError,
+    hasPermissions,
+    loadDevPublic,
+    normaliseKeyFile,
+    validateEmail,
+    validateLocation,
+    validateString
+  }  //  export the imported utils
