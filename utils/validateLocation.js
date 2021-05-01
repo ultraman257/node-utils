@@ -1,16 +1,15 @@
-function validateLocation (obj) {
+function validateLocation (location) {
+  /**
+   * a Location should have 2 properties:
+   * - logitude
+   * - latitude
+   */
+  if (typeof location !== 'object') return false;
+  if (!location.hasOwnProperty('longitude') || !location.hasOwnProperty('latitude')) return false; 
 
-  if (typeof obj !== 'object') return false;
-  
-  if (!obj.hasOwnProperty('longitude')) return false;
-  if (!obj.hasOwnProperty('latitude')) return false;
-
-  const longitude = obj.longitude;
-  const latitude = obj.latitude;
-  
-  if (typeof longitude !== 'number') return false;
-  if (typeof latitude !== 'number') return false;
-
+  const longitude = location.longitude;
+  const latitude = location.latitude;
+  if (typeof longitude !== 'number' || typeof latitude !== 'number') return false;
   return true;
 
 }
